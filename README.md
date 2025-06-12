@@ -23,6 +23,9 @@
 
 State-space language models such as Mamba match Transformer quality while permitting linear complexity inference, yet still comprise billions of parameters that hinder deployment. Existing one-shot pruning methods are tailored to attention blocks and fail to account for the time-shared and discretized state-transition matrix at the heart of the selective state-space module (SSM). In this paper, we introduce ***SparseSSM***, the first training-free pruning framework that extends the classic optimal brain surgeon (OBS) framework to state space architectures. Our layer-wise algorithm **(i)** derives an approximate second-order saliency score that aggregates Hessian-trace information across time steps,  **(ii)** incorporates a component sensitivity analysis to guide feed-forward network (FFN) pruning, which also sheds light on where redundancy resides in mamba architecture,  **(iii)** can be easily extended to semi-structured and structured sparsity. Empirically, we prune 50% of SSM weights without fine-tuning and observe no zero-shot accuracy loss, achieving the current state-of-the-art pruning algorithm for Mamba-based LLMs.
 
+> **SparseSSM: Efficient Selective Structured State Space Models Can Be Pruned in One-Shot** [[arXiv]](https://arxiv.org/abs/2506.09613)
+> *[Kaiwen Tuo](https://cfintech.github.io/), [Huan Wang](https://huanwang.tech/)*
+
 
 
 ## 🚀Quick Start
@@ -99,4 +102,19 @@ Performance analysis for one-shot unstructured pruning of the whole Mamba models
 - This source code is derived from the famous PyTorch reimplementation of [SparseGPT](https://github.com/IST-DASLab/sparsegpt) and [mamba-minimal](https://github.com/johnma2006/mamba-minimal).
 - We use [Mamba checkpoints](https://huggingface.co/state-spaces) to test our method.
 - The README file is inspired by [LLM-pruner](https://github.com/horseee/LLM-Pruner).
+
+
+
+## Citation
+
+If you find this work useful for your research, please consider citing our paper:
+
+```
+@article{tuo2025sparsessm,
+  title={SparseSSM: Efficient Selective Structured State Space Models Can Be Pruned in One-Shot},
+  author={Kaiwen Tuo and Huan Wang},
+  journal={arXiv preprint arXiv:2506.09613},
+  year={2025},
+}
+```
 
