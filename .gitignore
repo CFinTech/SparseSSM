@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.png
+results/
+results_ppl/
+wikitext
+wandb/
+experiments/
+data/
+*.db
+eval_out/
+bash/
+allenai/
+ptb_text_only/
+exp_final/
