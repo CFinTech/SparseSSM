@@ -7,21 +7,20 @@ from mamba_ssm.models.mixer_seq_simple import MambaLMHeadModel
 from transformers import AutoTokenizer, MambaForCausalLM
 
 from utils.model_utils import *
+from model.mamba_lmeval_adapter import MambaMinimalLM
 
 TASKS = ["piqa", "arc_easy", "arc_challenge", "winogrande", "openbookqa"]
 
 
 def evaluate_model(model_path, log_dir):
-    os.environ["HF_DATASETS_OFFLINE"] = "1"
-    model = MambaLMHeadModel.from_pretrained(
-        model_path, device="cuda", dtype=torch.float16
-    )
-    model.device = model.lm_head.weight.device
     logger = setup_logger(name="main", log_file="zero_shot.log", log_dir=log_dir)
-
-    logger.info("加载 tokenizer...")
-    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neox-20b")
-    lm = MambaLMWrapper(pretrained=model, tokenizer=tokenizer, batch_size=64)
+    lm = MambaMinimalLM(
+        pretrained=model_path,
+        tokenizer="EleutherAI/gpt-neox-20b",
+        device="cuda",
+        batch_size=16,
+        dtype="float32"
+    )
 
     logging.info(f"Selected Tasks: {TASKS}")
     results = evaluator.simple_evaluate(lm, tasks=TASKS, log_samples=False)["results"]

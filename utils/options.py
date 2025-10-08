@@ -66,6 +66,9 @@ def parse_args():
             "mag_semi",
             "structure_mag",
             "gpt_extend",
+            "sparsessm_dev",
+            "sparsessm_stru_dev",
+            "sparsessm_no_ts"
         ],
         help="Method for pruning",
     )
@@ -80,6 +83,15 @@ def parse_args():
     )
     parser.add_argument(
         "--module", type=str, default="None", help="choose which module to prune"
+    )
+    parser.add_argument(
+        "--do_prune", action="store_true"
+    )
+    parser.add_argument(
+        "--ppl_datasets", nargs="+", default=None
+    )
+    parser.add_argument(
+        "--eval_zero_shot", action="store_true"
     )
 
     args = parser.parse_args()

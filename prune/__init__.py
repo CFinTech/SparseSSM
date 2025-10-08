@@ -7,3 +7,6 @@ from prune.sparsessm_semi import *
 from prune.mag_semi import *
 from prune.mag_st import *
 from prune.sparsegpt_ext import *
+from prune.sparsessm_dev import *
+from prune.sparsessm_stru_dev import *
+from prune.sparsessm_no_ts import *

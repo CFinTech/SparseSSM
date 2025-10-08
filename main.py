@@ -78,17 +78,14 @@ def mamba_sequential(model, dataloader, dev, logger):
             f"Unsupported module type: {e}. Supported: {list(str_to_class.keys())}"
         )
     logger.info("Ready.")
+    
 
     inps2 = inps.clone()
     if args.prune_A:
         if args.method == "magnitude":
             mag_sequential(model, args, dev, logger)
-        elif args.method == "sparsessm":
-            ts_sequential(model, args, dev, logger, inps)
         elif args.method == "structure_ts":
             st_ts_sequential(model, args, dev, logger, inps)
-        elif args.method == "ts_real":
-            ts_real(model, args, dev, logger, inps)
         elif args.method == "ts_semi":
             ts_semi_sequential(model, args, dev, logger, inps)
         elif args.method == "mag_semi":
@@ -97,12 +94,14 @@ def mamba_sequential(model, dataloader, dev, logger):
             mag_st_sequential(model, args, dev, logger)
         elif args.method == "gpt_extend":
             gpt_sequential(model, args, inps, dev, logger)
+        elif args.method == "sparsessm_dev":
+            ts_dev(model, args, dev, logger, inps)
         else:
             raise ValueError(f"Method {args.method} not found!")
     if args.prune_layers:
         if args.method == "magnitude":
             mag_ffn(model, args, dev, logger)
-        elif args.method == "sparsessm" or args.method == "sparsegpt":
+        elif args.method == "sparsessm" or args.method == "sparsegpt" or args.method == "sparsessm_dev":
             ffn_sequential(model, args, dev, logger, inps2)
         else:
             raise ValueError(f"Method {args.method} not found!")
@@ -142,7 +141,7 @@ if __name__ == "__main__":
         seqlen=model.seqlen,
     )
 
-    if args.sparsity or args.prunen:
+    if args.do_prune and (args.sparsity or args.prunen):
         tick = time.time()
         mamba_sequential(model, dataloader, device, logger)
         for n, p in model.named_parameters():
@@ -152,11 +151,14 @@ if __name__ == "__main__":
     if args.save:
         model.save_pretrained(model, save_directory=args.save)
 
-    for dataset in ["wikitext2", "ptb", "c4"]:
-        dataloader, testloader = get_loaders(
-            dataset, seed=args.seed, model=args.model_path, seqlen=model.seqlen
-        )
-        logger.info(f"Dataset:, {dataset}")
-        mamba_eval(args.save, testloader, device, dataset, log_dir, logger)
+    if args.ppl_datasets:
+        for dataset in args.ppl_datasets:
+            dataloader, testloader = get_loaders(
+                dataset, seed=args.seed, model=args.model_path, seqlen=model.seqlen
+            )
+            logger.info(f"Dataset:, {dataset}")
+            mamba_eval(args.save, testloader, device, dataset, log_dir, logger)
 
-    evaluate_model(args.save, log_dir)
+    if args.eval_zero_shot:
+        evaluate_model(args.save, log_dir)
+

@@ -1,6 +1,5 @@
 __pycache__/
 *.pyc
-*.png
 results/
 results_ppl/
 wikitext

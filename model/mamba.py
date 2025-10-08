@@ -293,7 +293,7 @@ class MambaBlock(nn.Module):
         self.h = []
         self.deltaA = None
         # self.delta = None
-        self.deltaB = None
+        # self.deltaB = None
         # self.C = None
 
         # x_proj takes in `x` and outputs the input-specific Δ, B, C
@@ -428,8 +428,9 @@ class MambaBlock(nn.Module):
         # is additionally hardware-aware (like FlashAttention).
 
         x = torch.zeros((b, d_in, n), device=deltaA.device)
-        self.h.append(x)
-        # self.deltaA = deltaA
+        if not self.args.ppl:
+            self.h.append(x)
+            self.deltaA = deltaA
         # self.deltaB = deltaB_u
         # self.C = C
 
