@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/poison.svg">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SparseSSM: <br>
+              Efficient Selective Structured State Space Models Can Be
+              Pruned in One-Shot </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://cfintech.github.io/" target="_blank"> Kaiwen Tuo </a><sup>1,2</sup>,</span>
+
+              <span class="author-block">
+                <a href="https://huanwang.tech/" target="_blank">Huan
+                  Wang</a><sup>1*</sup>,</span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span><sup>1</sup>Westlake University </span>
+              <span><sup>2</sup>Tongji University </span>
+            </div>
+
+            <div style="font-size:15px">
+              <span><sup>&ast;</sup>Corresponding author: wanghuan@westlake.edu.cn</span></br></br>
+            </div>
+
+            <!-- <div class="columns is-centered" style="justify-content: flex-start; margin-left: 287px;"> -->
+            <!-- <div class="columns is-centered" style="justify-content: flex-start; margin-left: 187px;">
+                    <div class="column is-narrow" style="display: flex; justify-content: center; align-items: center;">
+                      <figure class="image">
+                        <img src="static/images/westlake_eng.png" alt="WLU" style="height: 100px; width: auto; object-fit: contain;">
+                      </figure>
+                    </div>
+                    <div class="column is-narrow" style="display: flex; justify-content: center; align-items: center;">
+                      <figure class="image">
+                        <img src="static/images/DAMO_1.avif" alt="DAMO" style="max-height: 100px; width: auto; object-fit: contain;">
+                      </figure>
+                    </div>
+                  </div> -->
+
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-narrow">
+                <figure class="image">
+                  <img src="static/images/westlake.jpg" alt="WLU"
+                    style="height: 92px; width: auto; object-fit: contain;">
+                </figure>
+              </div>
+              <div class="column is-narrow">
+                <figure class="image">
+                  <img src="static/images/tongji.png" alt="TJU"
+                    style="max-height: 102px; width: auto; object-fit: contain;">
+                </figure>
+              </div>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2506.09613" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/CFinTech/SparseSSM" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2506.09613" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser Preview Image -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+        <img src="static/images/teaser.jpg" alt="PDF Preview" width="100%">
+        <h2 class="subtitle has-text-centered">
+          We introduce <em><b>SparseSSM</b></em>, an OBS–based pruning methodology tailored to SSM-based architectures
+          such as Mamba, effectively reducing redundancy while preserving model performance. we prune
+          50% of SSM weights without fine-tuning and observe no zero-shot accuracy loss,
+          achieving the current state-of-the-art pruning algorithm for Mamba-based LLMs.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End Teaser Preview -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              State-space language models such as Mamba match Transformer quality while
+              permitting linear complexity inference, yet still comprise billions of parameters
+              that hinder deployment. Existing one-shot pruning methods are tailored to attention
+              blocks and fail to account for the time-shared and discretized state-transition
+              matrix at the heart of the selective state-space module (SSM). In this paper, we
+              introduce SparseSSM, the first training-free pruning framework that extends the
+              classic optimal brain surgeon (OBS) framework to state space architectures. Our
+              layer-wise algorithm (i) derives an approximate second-order saliency score that
+              aggregates Hessian-trace information across time steps, (ii) incorporates a component
+              sensitivity analysis to guide feed-forward network (FFN) pruning, which
+              also sheds light on where redundancy resides in mamba architecture, (iii) can be
+              easily extended to semi-structured and structured sparsity. Empirically, we prune
+              50% of SSM weights without fine-tuning and observe no zero-shot accuracy loss,
+              achieving the current state-of-the-art pruning algorithm for Mamba-based LLMs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Detailed Overview Section -->
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+
+      <!-- Title -->
+      <h2 class="title is-3">Detailed Algorithm of Our Proposed Method</h2>
+
+      <!-- Text Content -->
+      <div class="content has-text-justified">
+        <p>
+        <ul>
+          <li>
+            We introduce SparseSSM that adapts the classic optimal brain surgeon framework to the selective
+            SSM module in Mamba. Our method computes approximate second-order weight importance for
+            the time-sharing SSM parameters, enabling principled one-shot pruning of the SSM layers. This is
+            the first application of OBS-based pruning to Mamba’s architecture, addressing the challenges of
+            its discrete diagonalized design.
+          </li>
+          <li>
+            We further improve SparseSSM with two complementary techniques. First, we propose a weighted
+            mask aggregation method to address the time-sharing nature of the SSM module. Second, we
+            provide an in-depth analysis of the components of Mamba and compare their pruning tolerance,
+            which informs the FFN pruning strategy, shedding light on where redundancy resides in Mamba.
+          </li>
+        </ul>
+
+        </p>
+      </div>
+
+      <!-- Image Content -->
+      <div class="is-flex is-justify-content-center">
+        <figure class="image">
+          <img src="static/images/Algorithm.png" alt="SparseSSM Algorithm"
+            style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); max-width: 100%;">
+          <figcaption class="has-text-grey">
+            <!-- <strong>Illustration of our proposed VAP method.</strong> -->
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+
+  </section>
+  <!-- End Detailed Overview Section -->
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container" style="text-align: center;">
+        <h2 class="title is-3">Experiment Results</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <!-- First Image -->
+          <div class="item has-text-centered">
+            <div>
+              <img src="static/images/result_ssm.png" alt="ssm pruning" />
+            </div>
+            <h2 class="subtitle has-text-left has-text-justified">
+              Performance analysis for one-shot unstructured pruning of SSM modules in Mamba models
+              at 50% sparsity. Here, ↓ lower metrics reflect better outcomes, and ↑ denotes higher
+              metrics reflect better outcomes.
+            </h2>
+          </div>
+
+          <!-- Second Image -->
+          <div class="item has-text-centered">
+            <div>
+              <img src="static/images/mamba.jpg" alt="mamba pruning" />
+            </div>
+            <h2 class="subtitle has-text-left has-text-justified">
+              Performance analysis for one-shot unstructured pruning of the whole Mamba models (130M
+              ∼ 1.4B) at 50% sparsity. Here, ↓ lower metrics reflect better outcomes, and ↑ denotes higher metrics
+              reflect better outcomes.
+            </h2>
+          </div>
+
+          <!-- Third Image -->
+          <div class="item has-text-centered">
+            <div>
+              <img src="static/images/mamba_all.jpg" alt="mamba pruning across multipul sparsities" />
+            </div>
+            <h2 class="subtitle has-text-left has-text-justified">
+              Performance of the full Mamba architecture
+              at multiple sparsity levels by measuring
+              zero-shot task accuracy.
+            </h2>
+          </div>
+
+          <div class="item has-text-centered">
+            <div>
+              <img src="static/images/structured.jpg" alt="sturctured extension" />
+            </div>
+            <h2 class="subtitle has-text-left has-text-justified">
+              Performance analysis for one-shot structured pruning of the SSM module in Mamba-370M.
+            </h2>
+          </div>
+
+          <div class="item has-text-centered">
+            <div>
+              <img src="static/images/accelerate.png" alt="accelerate performance" />
+            </div>
+            <h2 class="subtitle has-text-left has-text-justified">
+              Performance and efficiency analysis for one-shot structure pruning of SSM modules in
+              Mamba-370M models.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{tuo2025sparsessm,
+          title={SparseSSM: Efficient Selective Structured State Space Models Can Be Pruned in One-Shot},
+          author={Kaiwen Tuo and Huan Wang},
+          journal={arXiv preprint arXiv:2506.09613},
+          year={2025}
+        }
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- Clustrmaps with title and size adjustment -->
+  <div style="text-align: center;">
+    <!-- Title -->
+    <h2 class="title is-3">Visitor Location Map</h2>
+
+    <!-- Clustrmaps map with size adjustment -->
+    <div style="width: 196px; height: auto; margin: 0 auto;">
+      <script type="text/javascript" id="clstr_globe"
+        src="//clustrmaps.com/globe.js?d=lBN30i77ecSvyljwl14wMI9YLcL3EqweBL173QSNzkY"></script>
+    </div>
+
+    <!-- Optional: Noscript version for browsers with no JS -->
+    <noscript>
+      <a href="https://clustrmaps.com/a/lBN30i77ecSvyljwl14wMI9YLcL3EqweBL173QSNzkY" title="ClustrMaps.com">
+        <img src="https://clustrmaps.com/stats/maps-no_clusters/lBN30i77ecSvyljwl14wMI9YLcL3EqweBL173QSNzkY.png"
+          alt="ClustrMaps.com" style="border: 0; width: 196px; height: auto;" />
+      </a>
+    </noscript>
+  </div>
+  <!-- End of Statcounter Code -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built on <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

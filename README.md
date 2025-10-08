@@ -1,93 +1,53 @@
+# Academic Project Page Template
+This is an academic paper project page template.
 
 
-<p align="center">
-<img src="img/README.assets/logo.png" width="20%"> <br>
-</p>
-<div align="center">
-<h1>SparseSSM</h1>
-  <div align="center">
-  <a href="https://opensource.org/licenses/Apache-2.0">
-    <img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache%202.0-4E94CE.svg">
-  </a>
-  <a href="https://github.com/state-spaces/mamba">
-    <img alt="Mamba" src="https://img.shields.io/badge/LLMs-Mamba-FAB093?style=flat-square">
-  </a>
-  </div>
-  <p align="center">
-    <h3>Efficient Selective Structured State Space Models Can Be Pruned in One-Shot</h3>
-</p>
-</div>
-
-
-
-State-space language models such as Mamba match Transformer quality while permitting linear complexity inference, yet still comprise billions of parameters that hinder deployment. Existing one-shot pruning methods are tailored to attention blocks and fail to account for the time-shared and discretized state-transition matrix at the heart of the selective state-space module (SSM). In this paper, we introduce ***SparseSSM***, the first training-free pruning framework that extends the classic optimal brain surgeon (OBS) framework to state space architectures. Our layer-wise algorithm **(i)** derives an approximate second-order saliency score that aggregates Hessian-trace information across time steps,  **(ii)** incorporates a component sensitivity analysis to guide feed-forward network (FFN) pruning, which also sheds light on where redundancy resides in mamba architecture,  **(iii)** can be easily extended to semi-structured and structured sparsity. Empirically, we prune 50% of SSM weights without fine-tuning and observe no zero-shot accuracy loss, achieving the current state-of-the-art pruning algorithm for Mamba-based LLMs.
+Example project pages built using this template are:
+- https://horwitz.ai/probex
+- https://vision.huji.ac.il/probegen
+- https://horwitz.ai/mother
+- https://horwitz.ai/spectral_detuning
+- https://vision.huji.ac.il/ladeda
+- https://vision.huji.ac.il/dsire
+- https://horwitz.ai/podd
+- https://dreamix-video-editing.github.io
+- https://horwitz.ai/conffusion
+- https://horwitz.ai/3d_ads/
+- https://vision.huji.ac.il/ssrl_ad
+- https://vision.huji.ac.il/deepsim
 
 
 
-## 🚀Quick Start
+## Start using the template
+To start using the template click on `Use this Template`.
 
-### 1. Install environment
+The template uses html for controlling the content and css for controlling the style. 
+To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
 
-```bash
-git clone https://github.com/CFinTech/SparseSSM
-cd SparseSSM
-pip install -r requirements.txt
-```
+**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
 
-### 2. Download dataset
+## Components
+- Teaser video
+- Images Carousel
+- Youtube embedding
+- Video Carousel
+- PDF Poster
+- Bibtex citation
 
-The data for calibrations can be downloaded [here](https://huggingface.co/datasets/mindchain/wikitext2).
+## Tips:
+- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
+- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
+(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
+- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
+- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
+- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
+- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
+- This project page can also be made into a github pages website.
+- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
+- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://horwitz.ai](https://horwitz.ai)
 
-### 3. Execute
+## Acknowledgments
+Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-To prune the SSM module, you can run the following command:
-
-```bash
-CUDA_VISIBLE_DEVICES=${your_gpu_id} python main.py \
-  path/to/your/model wikitext2 \
-  --experiment_name your_experiment_name\
-  --method "sparsessm_dev" \
-  --save path/to/pruned_model \
-  --sparsity 0.5 \
-  --nsamples 64 \
-  --minlayer 0 \
-  --maxlayer 100 \
-  --prune_A True \
-  --do_prune \
-  --eval_zero_shot \
-  --log_wandb \
-```
-
-
-
-## 🖼️ Method Overview
-
-![image-20250925192926282](./img/README.assets/image-20250925192926282.png)
-
-Illustration of SparseSSM. The **first row** depicts the evolution of the diagonal parameter matrix $A_{log}$ within the SSM module in Mamba, together with a schematic of the forward-propagation process. In the **second row**, the **left panel** shows the procedure for obtaining a mask from the Hessian estimate at a single time step, while the **right panel** presents our weighted strategy for merging the masks across all time steps, darker background indicates larger weights.
-
-## 📊 Comparison of Experimental Results
-
-Performance analysis for one-shot unstructured pruning of SSM modules in Mamba models at $50\%$ sparsity.
-
-![image-20250925192141105](./img/README.assets/image-20250925192141105.png)
-
-## 🙏 Acknowledgements
-
-- This source code is derived from the famous PyTorch reimplementation of [SparseGPT](https://github.com/IST-DASLab/sparsegpt) and [mamba-minimal](https://github.com/johnma2006/mamba-minimal).
-- We use [Mamba checkpoints](https://huggingface.co/state-spaces) to test our method.
-- The README file is inspired by [LLM-pruner](https://github.com/horseee/LLM-Pruner).
-
-## Citation
-
-If you find this work useful for your research, please consider citing our paper:
-
-```
-@article{tuo2025sparsessm,
-  title={SparseSSM: Efficient Selective Structured State Space Models Can Be Pruned in One-Shot},
-  author={Kaiwen Tuo and Huan Wang},
-  journal={arXiv preprint arXiv:2506.09613},
-  year={2025},
-}
-```
-
+## Website License
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
