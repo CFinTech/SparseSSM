@@ -74,9 +74,9 @@ Performance analysis for one-shot unstructured pruning of SSM modules in Mamba m
 
 ## 🙏 Acknowledgements
 
-This source code is derived from the famous PyTorch reimplementation of [SparseGPT](https://github.com/IST-DASLab/sparsegpt) and [mamba-minimal](https://github.com/johnma2006/mamba-minimal).
-We use [Mamba checkpoints](https://huggingface.co/state-spaces) to test our method.
-The README file is inspired by [LLM-pruner](https://github.com/horseee/LLM-Pruner).
+- This source code is derived from the famous PyTorch reimplementation of [SparseGPT](https://github.com/IST-DASLab/sparsegpt) and [mamba-minimal](https://github.com/johnma2006/mamba-minimal).
+- We use [Mamba checkpoints](https://huggingface.co/state-spaces) to test our method.
+- The README file is inspired by [LLM-pruner](https://github.com/horseee/LLM-Pruner).
 
 ## Citation
 
